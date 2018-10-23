@@ -66,8 +66,8 @@ using v8::Value;
 void Method(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = args.GetIsolate();
   //char* UserId[] = new char[36];
-  unsigned char UserId[DEMO_MEMBUFFER_SIZE];
-  memset(UserId, 0, ENCRYPT_BUFFER_LENGTH1);
+  unsigned char UserId[DEMO_MEMBUFFER_SIZE+1];
+  memset(UserId, 0, ENCRYPT_BUFFER_LENGTH1+1);
   ReadData((char*)&UserId);
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, (char*)UserId));
 }
