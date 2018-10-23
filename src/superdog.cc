@@ -31,13 +31,13 @@ unsigned char membuffer[DEMO_MEMBUFFER_SIZE];
 
 #define SAFE_FREE(p) { if(p) { free(p); (p) = NULL; } }
 
-#ifdef _WIN64 //64位
-    #pragma comment(lib, "../vendor/libdog_windows_x64_demo.lib")
-#else //32位
-    #pragma comment(lib, "../vendor/libdog_windows_demo.lib")
-#endif
+// #ifdef _WIN64 //64位
+//     #pragma comment(lib, "../vendor/libdog_windows_x64_demo.lib")
+// #else //32位
+//     #pragma comment(lib, "../vendor/libdog_windows_demo.lib")
+// #endif
 
-#pragma comment(lib, "legacy_stdio_definitions.lib")
+//#pragma comment(lib, "legacy_stdio_definitions.lib")
 
 
 dog_status_t CheckKey();
@@ -67,7 +67,7 @@ void Method(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = args.GetIsolate();
   //char* UserId[] = new char[36];
   unsigned char UserId[DEMO_MEMBUFFER_SIZE];
-  memset(UserId, 0, ENCRYPT_BUFFER_LENGTH1+1);
+  memset(UserId, 0, ENCRYPT_BUFFER_LENGTH1);
   ReadData((char*)&UserId);
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, (char*)UserId));
 }
