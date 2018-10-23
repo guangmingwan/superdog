@@ -1,0 +1,24 @@
+{
+  "name": "superdog",
+  "version": "1.0.0",
+  "description": "superdog for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guangmingwan/superdog.git"
+  },
+  "keywords": [
+    "superdog"
+  ],
+  "author": "guangming.wan",
+  "license": "ISC",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/guangmingwan/superdog/issues"
+  },
+  "homepage": "https://github.com/guangmingwan/superdog#readme"
+}
