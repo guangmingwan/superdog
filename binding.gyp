@@ -2,17 +2,23 @@
 "targets": [
     {
       "target_name": "superdog",
-      "sources": [ "src/superdog.cc" ],
       "conditions": [
          ['OS=="win"',{
+	   "sources": [ "src/superdog.cc" ],
            "libraries": [
              "-llegacy_stdio_definitions.lib",
              "../vendor/libdog_windows_demo.lib"
            ]
-         },{
-           "type":"none"
-         }]
-      ]
+         }
+         ],
+	
+        ['OS=="mac"', {
+          "sources": ["src/superdog_mac.cc"],
+          "link_settings": {
+          }
+        }]
+        ]
+      
     },
   ]
 }
